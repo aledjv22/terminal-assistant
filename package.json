@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/aledjv22/terminal-assistant/issues"
   },
-  "homepage": "https://github.com/aledjv22/terminal-assistant#readme"
+  "homepage": "https://github.com/aledjv22/terminal-assistant#readme",
+  "dependencies": {
+    "@huggingface/inference": "^2.8.1"
+  }
 }
