@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Proyecto destinado a la creación de un asistente con rol personalizado para las consultas del usuario, el mismo será utilizado desde la terminal, utilizando la api de Hugging Face.",
   "main": "main.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
