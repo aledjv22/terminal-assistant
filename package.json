@@ -1,0 +1,23 @@
+{
+  "name": "terminal-assistant",
+  "version": "1.0.0",
+  "description": "Proyecto destinado a la creación de un asistente con rol personalizado para las consultas del usuario, el mismo será utilizado desde la terminal, utilizando la api de Hugging Face.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aledjv22/terminal-assistant.git"
+  },
+  "keywords": [
+    "Hugging_Face",
+    "Terminal_Assistant"
+  ],
+  "author": "Victor Díaz <victor.diaz.jauregui@mi.unc.edu.ar>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aledjv22/terminal-assistant/issues"
+  },
+  "homepage": "https://github.com/aledjv22/terminal-assistant#readme"
+}
