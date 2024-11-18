@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/aledjv22/terminal-assistant#readme",
   "dependencies": {
-    "@huggingface/inference": "^2.8.1"
+    "@huggingface/inference": "^2.8.1",
+    "dotenv": "^16.4.5"
   }
 }
