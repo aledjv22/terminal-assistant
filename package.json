@@ -24,7 +24,8 @@
   "homepage": "https://github.com/aledjv22/terminal-assistant#readme",
   "dependencies": {
     "@huggingface/inference": "^2.8.1",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "readline": "^1.3.0"
   },
   "devDependencies": {
     "eslint": "^9.15.0",
