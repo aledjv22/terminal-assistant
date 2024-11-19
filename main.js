@@ -11,15 +11,18 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-const generateTextFromInput = async (message) => {
-  const response = await hf.chatCompletion({
-    model: "mistralai/Mixtral-8x7B-Instruct-v0.1",
-    messages: [{ role: "user", content: message }],
-    max_tokens: 1000,
-    temperature: 0.1,
-    seed: 42,
+const generateTextFromInput = async () => {
+  rl.question("Tu: ", async (input) => {
+    const response = await hf.chatCompletion({
+      model: "mistralai/Mixtral-8x7B-Instruct-v0.1",
+      messages: [{ role: "user", content: input }],
+      max_tokens: 1000,
+      temperature: 0.1,
+      seed: 42,
+    });
+    console.log("\nAssistant:", response.choices[0].message.content);
+    rl.close();
   });
-  console.log(response.choices[0].message.content);
 };
 
-generateTextFromInput(message);
+generateTextFromInput();
