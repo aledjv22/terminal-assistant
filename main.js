@@ -1,10 +1,15 @@
+import readline from "readline";
 import { config } from "dotenv";
 import { HfInference } from "@huggingface/inference";
 
 config();
 
 const hf = new HfInference(process.env.HUGGING_FACE_TOKEN);
-const message = "Cuál es la capital de Argentina?";
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
 
 const generateTextFromInput = async (message) => {
   const response = await hf.chatCompletion({
