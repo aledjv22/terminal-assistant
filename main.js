@@ -1,3 +1,4 @@
+import loading from "loading-cli";
 import readline from "readline";
 import { config } from "dotenv";
 import { HfInference } from "@huggingface/inference";
@@ -13,6 +14,11 @@ const rl = readline.createInterface({
 
 const generateTextFromInput = async () => {
   rl.question("Tu: ", async (input) => {
+    const load = loading({
+      text: "Pensando...",
+      frames: ["🌑", "🌒", "🌓", "🌔", "🌕", "🌖", "🌗", "🌘"],
+    }).start();
+
     const response = await hf.chatCompletion({
       model: "mistralai/Mixtral-8x7B-Instruct-v0.1",
       messages: [{ role: "user", content: input }],
@@ -20,6 +26,8 @@ const generateTextFromInput = async () => {
       temperature: 0.1,
       seed: 42,
     });
+
+    load.stop();
     console.log("\nAssistant:", response.choices[0].message.content);
     rl.close();
   });
