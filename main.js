@@ -28,8 +28,13 @@ const generateTextFromInput = async () => {
     });
 
     load.stop();
+
     console.log('\nAssistant:', response.choices[0].message.content);
-    rl.close();
+
+    console.log('========================');
+    console.log('========================');
+
+    generateTextFromInput();
   });
 };
 
