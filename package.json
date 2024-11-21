@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "lint": "eslint . --fix",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "start": "node main.js"
   },
   "repository": {
     "type": "git",
