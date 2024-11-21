@@ -14,6 +14,12 @@ const rl = readline.createInterface({
 
 const generateTextFromInput = async () => {
   rl.question('Tu: ', async (input) => {
+    if (input.toLowerCase() === 'exit' || input.toLowerCase() === 'salir') {
+      console.log('¡Hasta luego!0 ^_^');
+      rl.close();
+      return;
+    }
+
     const load = loading({
       text: 'Pensando...',
       frames: ['🌑', '🌒', '🌓', '🌔', '🌕', '🌖', '🌗', '🌘'],
