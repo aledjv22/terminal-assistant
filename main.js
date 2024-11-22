@@ -27,7 +27,10 @@ const generateTextFromInput = async () => {
 
     const response = await hf.chatCompletion({
       model: 'mistralai/Mixtral-8x7B-Instruct-v0.1',
-      messages: [{ role: 'user', content: input }],
+      messages: [
+        { role: 'system', content: process.env.ROLE_SYSTEM_CONTENT },
+        { role: 'user', content: input },
+      ],
       max_tokens: 1000,
       temperature: 0.1,
       seed: 42,
