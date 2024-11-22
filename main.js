@@ -16,7 +16,16 @@ const conversationHistory = [
   { role: 'system', content: process.env.ROLE_SYSTEM_CONTENT || '' },
 ];
 
+const hasToken = () => hf.accessToken !== '';
+
 const generateTextFromInput = async () => {
+  if (!hasToken()) {
+    console.log('No se ha encontrado un token de Hugging Face.');
+    console.log('Por favor, revisa el archivo .env');
+    rl.close();
+    return;
+  }
+
   rl.question('Tu: ', async (input) => {
     if (input.toLowerCase() === 'exit' || input.toLowerCase() === 'salir') {
       console.log('¡Hasta luego! ^_^');
