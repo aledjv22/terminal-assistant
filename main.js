@@ -12,13 +12,19 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
+const conversationHistory = [
+  { role: 'system', content: process.env.ROLE_SYSTEM_CONTENT || '' },
+];
+
 const generateTextFromInput = async () => {
   rl.question('Tu: ', async (input) => {
     if (input.toLowerCase() === 'exit' || input.toLowerCase() === 'salir') {
-      console.log('¡Hasta luego!0 ^_^');
+      console.log('¡Hasta luego! ^_^');
       rl.close();
       return;
     }
+
+    conversationHistory.push({ role: 'user', content: input });
 
     const load = loading({
       text: 'Pensando...',
@@ -27,10 +33,7 @@ const generateTextFromInput = async () => {
 
     const response = await hf.chatCompletion({
       model: 'mistralai/Mixtral-8x7B-Instruct-v0.1',
-      messages: [
-        { role: 'system', content: process.env.ROLE_SYSTEM_CONTENT || '' },
-        { role: 'user', content: input },
-      ],
+      messages: conversationHistory,
       max_tokens: 1000,
       temperature: 0.1,
       seed: 42,
@@ -38,7 +41,10 @@ const generateTextFromInput = async () => {
 
     load.stop();
 
-    console.log('\nAssistant:', response.choices[0].message.content);
+    const assistantMessage = response.choices[0].message.content;
+    conversationHistory.push({ role: 'assistant', content: assistantMessage });
+
+    console.log('\nAssistant:', assistantMessage);
 
     console.log('========================');
     console.log('========================');
