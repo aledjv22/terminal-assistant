@@ -30,6 +30,12 @@ const generateTextFromInput = async () => {
   }
 
   rl.question('Tu: ', async (input) => {
+    const numLines = input.split('\n').length;
+    readline.moveCursor(process.stdout, 0, -(numLines + 1));
+    readline.clearScreenDown(process.stdout);
+
+    console.log(chalk.bgBlue('Tu:', input));
+
     if (input.toLowerCase() === 'exit' || input.toLowerCase() === 'salir') {
       console.log(chalk.bgYellow('¡Hasta luego! ^-^'));
       rl.close();
