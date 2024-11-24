@@ -1,3 +1,4 @@
+import chalk from 'chalk';
 import loading from 'loading-cli';
 import readline from 'readline';
 import { config } from 'dotenv';
@@ -20,15 +21,17 @@ const hasToken = () => hf.accessToken !== '';
 
 const generateTextFromInput = async () => {
   if (!hasToken()) {
-    console.log('No se ha encontrado un token de Hugging Face.');
-    console.log('Por favor, revisa el archivo .env');
+    console.log(
+      chalk.bgYellow('No se ha encontrado un token de Hugging Face.'),
+    );
+    console.log(chalk.bgYellow('Por favor, revisa el archivo .env'));
     rl.close();
     return;
   }
 
   rl.question('Tu: ', async (input) => {
     if (input.toLowerCase() === 'exit' || input.toLowerCase() === 'salir') {
-      console.log('¡Hasta luego! ^_^');
+      console.log(chalk.bgYellow('¡Hasta luego! ^-^'));
       rl.close();
       return;
     }
@@ -58,10 +61,12 @@ const generateTextFromInput = async () => {
     const assistantMessage = response.choices[0].message.content;
     conversationHistory.push({ role: 'assistant', content: assistantMessage });
 
-    console.log('\nAssistant:', assistantMessage);
+    console.log(
+      chalk.bgGreen(chalk.underline.bold('\nAssistant:'), assistantMessage),
+    );
 
-    console.log('========================');
-    console.log('========================');
+    console.log(chalk.magenta('=========================================='));
+    console.log(chalk.magenta('=========================================='));
 
     generateTextFromInput();
   });
