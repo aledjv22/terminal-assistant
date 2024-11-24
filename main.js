@@ -29,12 +29,12 @@ const generateTextFromInput = async () => {
     return;
   }
 
-  rl.question('Tu: ', async (input) => {
+  rl.question(chalk.underline('Tu:') + ' ', async (input) => {
     const numLines = input.split('\n').length;
     readline.moveCursor(process.stdout, 0, -(numLines + 1));
     readline.clearScreenDown(process.stdout);
 
-    console.log(chalk.bgBlue('Tu:', input));
+    console.log(chalk.bgBlue.black(chalk.underline.bold('Tu:'), input));
 
     if (input.toLowerCase() === 'exit' || input.toLowerCase() === 'salir') {
       console.log(chalk.bgYellow('¡Hasta luego! ^-^'));
@@ -68,7 +68,9 @@ const generateTextFromInput = async () => {
     conversationHistory.push({ role: 'assistant', content: assistantMessage });
 
     console.log(
-      chalk.bgGreen(chalk.underline.bold('\nAssistant:'), assistantMessage),
+      chalk
+        .bgHex('#49c156')
+        .black(chalk.underline.bold('\nAsistente:'), assistantMessage),
     );
 
     console.log(chalk.magenta('=========================================='));
