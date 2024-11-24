@@ -1,5 +1,5 @@
 import chalk from 'chalk';
-import loading from 'loading-cli';
+import loader from './src/loader.js';
 import readline from 'readline';
 import {
   hf,
@@ -44,10 +44,7 @@ const generateTextFromInput = async () => {
 
     conversationHistory.push({ role: 'user', content: input });
 
-    const load = loading({
-      text: 'Pensando...',
-      frames: ['🌑', '🌒', '🌓', '🌔', '🌕', '🌖', '🌗', '🌘'],
-    }).start();
+    loader.start();
 
     const response = await hf.chatCompletion({
       model,
@@ -57,7 +54,7 @@ const generateTextFromInput = async () => {
       seed,
     });
 
-    load.stop();
+    loader.stop();
 
     const assistantMessage = response.choices[0].message.content;
     conversationHistory.push({ role: 'assistant', content: assistantMessage });
