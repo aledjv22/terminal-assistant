@@ -1,8 +1,11 @@
 import chalk from 'chalk';
 import loader from './src/loader.js';
 import readline from 'readline';
+import {
+  addMessageToHistory,
+  getConversationHistory,
+} from './src/conversationHistory.js';
 import { getChatCompletion, hasToken } from './src/hfClient.js';
-import { roleSystemContent } from './src/config.js';
 import {
   showUserInput,
   showAssistantMessage,
@@ -15,8 +18,6 @@ const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
-
-const conversationHistory = [{ role: 'system', content: roleSystemContent }];
 
 const generateTextFromInput = async () => {
   if (!hasToken()) {
@@ -38,16 +39,17 @@ const generateTextFromInput = async () => {
       return;
     }
 
-    conversationHistory.push({ role: 'user', content: input });
+    addMessageToHistory('user', input);
 
     loader.start();
 
-    const response = await getChatCompletion(conversationHistory);
+    const response = await getChatCompletion(getConversationHistory());
 
     loader.stop();
 
     const assistantMessage = response.choices[0].message.content;
-    conversationHistory.push({ role: 'assistant', content: assistantMessage });
+
+    addMessageToHistory('assistant', assistantMessage);
 
     showAssistantMessage(assistantMessage);
 
