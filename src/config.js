@@ -1,9 +1,8 @@
 import { config } from 'dotenv';
-import { HfInference } from '@huggingface/inference';
 
 config();
 
-const hf = new HfInference(process.env.HUGGING_FACE_TOKEN);
+const hf_token = process.env.HUGGING_FACE_TOKEN || '';
 
 const roleSystemContent = process.env.ROLE_SYSTEM_CONTENT || '';
 
@@ -15,4 +14,4 @@ const temperature = parseFloat(process.env.TEMPERATURE || '0.1');
 
 const seed = parseInt(process.env.SEED || '42');
 
-export { hf, roleSystemContent, model, max_tokens, temperature, seed };
+export { hf_token, roleSystemContent, model, max_tokens, temperature, seed };
