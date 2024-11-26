@@ -13,6 +13,7 @@ import {
   showTokenError,
   showMargins,
 } from './src/messages.js';
+import { shouldExit } from './src/exitHandler.js';
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -33,7 +34,7 @@ const generateTextFromInput = async () => {
 
     showUserInput(input);
 
-    if (input.toLowerCase() === 'exit' || input.toLowerCase() === 'salir') {
+    if (shouldExit(input)) {
       showExitMessage();
       rl.close();
       return;
