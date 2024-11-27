@@ -11,12 +11,12 @@ const showAssistantMessage = (message) => {
 };
 
 const showExitMessage = () => {
-  console.log(chalk.bgYellow('¡Hasta luego! ^-^'));
+  console.log(chalk.bgYellow.black('¡Hasta luego! ^-^'));
 };
 
 const showTokenError = () => {
-  console.log(chalk.bgYellow('No se ha encontrado un token de Hugging Face.'));
-  console.log(chalk.bgYellow('Por favor, revisa el archivo .env'));
+  console.log(chalk.bgYellow.black('No se ha encontrado un token de Hugging Face.'));
+  console.log(chalk.bgYellow.black('Por favor, revisa el archivo .env'));
 };
 
 const showMargins = () => {
