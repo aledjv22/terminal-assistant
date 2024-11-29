@@ -83,3 +83,16 @@ Para configurar un alias y poder ejecutar el asistente desde cualquier ubicació
     ```bash
     assistant
     ```
+
+## Contribuciones
+¡Todas las contribuciones son bienvenidas! 😊 Si encuentras algún error o tienes alguna idea para mejorar el proyecto, puedes:
+- **Abrir una issue 🐞:**
+    - Ve a la sección de *issues* del repositorio.
+    - Crea una nueva issue describiendo detalladamente el error o la sugerencia.
+- **Realizar un pull request 🚀:** 
+  - Haz un fork del repositorio.
+  - Crea una nueva rama a partir de `main`.
+  - Realiza tus cambios y asegúrate de que todo funcione correctamente.
+  - Crea un pull request describiendo tus cambios.
+  - Espera a que tu pull request sea revisado y aceptado.
+¡Gracias por ayudar a mejorar este proyecto! 🎉
