@@ -38,19 +38,19 @@ Este proyecto es un asistente inteligente que funcionana directamente en la term
     npm start
     ```
 2. Interactúa con el asistente:
-   1. Escribe tus preguntas o comentarios, las cuales aparecerán en azul.
-   2. El asistente mostrará un indicador lunar mientras "piensa".
-   3. Las respuestas aparecerán en verde.
+   - Escribe tus preguntas o comentarios, las cuales aparecerán en azul.
+   - El asistente mostrará un indicador lunar mientras "piensa".
+   - Las respuestas aparecerán en verde.
 3. Para salir puedes utilizar cualquieras de las siguientes palabras:
-   1. exit
-   2. salir
-   3. chau
-   4. bye
-   5. adios
-   6. quit
-   7. q
-   8. s
-   9. goodbye
+   - exit
+   - salir
+   - chau
+   - bye
+   - adios
+   - quit
+   - q
+   - s
+   - goodbye
 
 ## Configuración de Alias (Linux) 🔧
 Para configurar un alias y poder ejecutar el asistente desde cualquier ubicación, sigue estos pasos:
@@ -65,14 +65,14 @@ Para configurar un alias y poder ejecutar el asistente desde cualquier ubicació
     # Ejemplo de salida: /home/usuario/proyectos/terminal-assistant
     ```
 3. Copia la ruta obtenida y elige según tu shell:
-   1. **Para Bash**
+    - **Para Bash**
         ```bash
         # Añade el alias al archivo .bashrc
         echo 'alias assistant="cd RUTA_OBTENIDA && npm start"' >> ~/.bashrc
         # Recarga el archivo .bashrc
         source ~/.bashrc
         ```
-   2. **Para Zsh**
+    - **Para Zsh**
         ```bash
         # Añade el alias al archivo .zshrc
         echo 'alias assistant="cd RUTA_OBTENIDA && npm start"' >> ~/.zshrc
