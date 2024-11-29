@@ -31,3 +31,24 @@ Este proyecto es un asistente inteligente que funcionana directamente en la term
         SEED=semilla (default: 42)
         ROLE_SYSTEM_CONTENT=rol_del_asistente (default: '')
         ```
+
+## Uso
+1. Inicia el asistente:
+    ```bash
+    npm start
+    ```
+2. Interactúa con el asistente:
+   1. Escribe tus preguntas o comentarios, las cuales aparecerán en azul.
+   2. El asistente mostrará un indicador lunar mientras "piensa".
+   3. Las respuestas aparecerán en verde.
+3. Para salir puedes utilizar cualquieras de las siguientes palabras:
+   1. exit
+   2. salir
+   3. chau
+   4. bye
+   5. adios
+   6. quit
+   7. q
+   8. s
+   9. goodbye
+
