@@ -52,3 +52,34 @@ Este proyecto es un asistente inteligente que funcionana directamente en la term
    8. s
    9. goodbye
 
+## Configuración de Alias (Linux) 🔧
+Para configurar un alias y poder ejecutar el asistente desde cualquier ubicación, sigue estos pasos:
+
+1. Navega hasta el directorio del proyecto:
+    ```bash
+    cd ruta/del/proyecto/terminal-assistant
+    ```
+2. Obtén la ruta absoluta del directorio:
+    ```bash
+    pwd
+    # Ejemplo de salida: /home/usuario/proyectos/terminal-assistant
+    ```
+3. Copia la ruta obtenida y elige según tu shell:
+   1. **Para Bash**
+        ```bash
+        # Añade el alias al archivo .bashrc
+        echo 'alias assistant="cd RUTA_OBTENIDA && npm start"' >> ~/.bashrc
+        # Recarga el archivo .bashrc
+        source ~/.bashrc
+        ```
+   2. **Para Zsh**
+        ```bash
+        # Añade el alias al archivo .zshrc
+        echo 'alias assistant="cd RUTA_OBTENIDA && npm start"' >> ~/.zshrc
+        # Recarga el archivo .zshrc
+        source ~/.zshrc
+        ```
+4. Prueba el alias:
+    ```bash
+    assistant
+    ```
