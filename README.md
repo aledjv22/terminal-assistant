@@ -95,4 +95,5 @@ Para configurar un alias y poder ejecutar el asistente desde cualquier ubicació
   - Realiza tus cambios y asegúrate de que todo funcione correctamente.
   - Crea un pull request describiendo tus cambios.
   - Espera a que tu pull request sea revisado y aceptado.
+
 ¡Gracias por ayudar a mejorar este proyecto! 🎉
